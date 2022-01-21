@@ -10,9 +10,9 @@ import (
 func TestTerraformHelloWorldExample(t *testing.T) {
 	// Construct the terraform options with default retryable errors to handle the most common
 	// retryable errors in terraform testing.
-	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
+	terraformOptions := &terraform.Options{
 		// Set the path to the Terraform code that will be tested.
-		TerraformDir: "../examples/terraform-hello-world-example",
+		TerraformDir: "../",
 	})
 
 	// Clean up resources with "terraform destroy" at the end of the test.
